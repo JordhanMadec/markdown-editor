@@ -1,0 +1,20 @@
+@import "variables/variables";
+
+body, html {
+  height: 100vh;
+  margin: 0;
+  font-size: $small-font;
+  font-family: 'Cabin', sans-serif;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+h1 {
+  font-size: $big-font;
+}
+
+h2 {
+  font-size: $mid-font;
+}
