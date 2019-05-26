@@ -8,6 +8,7 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
 import { TextPreviewComponent } from './components/text-preview/text-preview.component';
 import { TextEditorButtonsComponent } from './components/text-editor/text-editor-buttons/text-editor-buttons.component';
 import { EditorButtonComponent } from './components/text-editor/text-editor-buttons/editor-button/editor-button.component';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditorButtonComponent } from './components/text-editor/text-editor-butt
     TextEditorComponent,
     TextPreviewComponent,
     TextEditorButtonsComponent,
-    EditorButtonComponent
+    EditorButtonComponent,
+    IconButtonComponent
   ],
   imports: [
     BrowserModule,

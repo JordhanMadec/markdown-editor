@@ -1,7 +1,7 @@
 @import "variables/variables";
 
 body, html {
-  height: 100vh;
+  height: 100%;
   margin: 0;
   font-size: $small-font;
   font-family: 'Cabin', sans-serif;
@@ -17,4 +17,8 @@ h1 {
 
 h2 {
   font-size: $mid-font;
+}
+
+button {
+  cursor: pointer;
 }
