@@ -1,3 +1,5 @@
+import { text } from '@angular/core/src/render3';
+
 function parseMdTitleToHtml(markdown: string): string {
   return markdown
     .replace(/^######(.+)(\n|$)/g, '<h6>$1</h6>') // Parse h6
@@ -10,19 +12,19 @@ function parseMdTitleToHtml(markdown: string): string {
 
 function parseMdBoldToHtml(markdown: string): string {
   return markdown
-    .replace(/\*\*(.+)\*\*/g, '<strong>$1</strong>') // Parse bold text
-    .replace(/__(.+)__/g, '<strong>$1</strong>'); // Parse bold text alternative
+    .replace(/\*\*((.+|\n)+)\*\*/gm, '<strong>$1</strong>') // Parse bold text
+    .replace(/__((.+|\n)+)__/gm, '<strong>$1</strong>'); // Parse bold text alternative
+}
+
+function parseMdItalicToHtml(markdown: string): string {
+  return markdown
+    .replace(/\*((.+|\n)+)\*/gm, '<em>$1</em>') // Parse italic text
+    .replace(/_((.+|\n)+)_/gm, '<em>$1</em>'); // Parse italic text alternative
 }
 
 function parseMdLinkToHtml(markdown: string): string {
   return markdown
     .replace(/\[(.+)\]\((.+)\)/g, '<a href="$2">$1</a>'); // Parse links
-}
-
-function parseMdItalicToHtml(markdown: string): string {
-  return markdown
-    .replace(/\*(.+)\*/g, '<em>$1</em>') // Parse italic text
-    .replace(/_(.+)_/g, '<em>$1</em>'); // Parse italic text alternative
 }
 
 function parseMdLinebreaksToHtml(markdown: string): string {
@@ -43,20 +45,20 @@ export default function parseMdToHtml(markdown: string): string {
   return parsed;
 }
 
-export function insertTextIntoTextarea(textarea: any, text: string, breakLine = false) {
-  text = breakLine ? `${text} \n` : text;
+export function insertTextIntoTextarea(textarea: any, textBefore: string, textAfter: string) {
+  const startPos = textarea.selectionStart || 0;
+  const endPos = textarea.selectionEnd || startPos;
+  const selection = textarea.value.substring(startPos, endPos);
 
-  if (textarea.selectionStart || textarea.selectionStart === '0') {
-    const startPos = textarea.selectionStart;
-    const endPos = textarea.selectionEnd;
-    textarea.value = textarea.value.substring(0, startPos)
-      + text
-      + textarea.value.substring(endPos, textarea.value.length);
-  } else {
-    textarea.value += text;
-  }
+  textarea.value = textarea.value.substring(0, startPos)
+    + textBefore
+    + selection
+    + textAfter
+    + textarea.value.substring(endPos, textarea.value.length);
 
   textarea.focus();
+  textarea.selectionStart = startPos + textBefore.length;
+  textarea.selectionEnd = endPos + textBefore.length;
 
   return textarea.value;
 }
