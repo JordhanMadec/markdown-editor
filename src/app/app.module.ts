@@ -9,6 +9,8 @@ import { TextPreviewComponent } from './components/text-preview/text-preview.com
 import { TextEditorButtonsComponent } from './components/text-editor/text-editor-buttons/text-editor-buttons.component';
 import { EditorButtonComponent } from './components/text-editor/text-editor-buttons/editor-button/editor-button.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
+import { FabButtonComponent } from './components/fab-button/fab-button.component';
+import { ExportModalComponent } from './components/text-preview/export-modal/export-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
     TextPreviewComponent,
     TextEditorButtonsComponent,
     EditorButtonComponent,
-    IconButtonComponent
+    IconButtonComponent,
+    FabButtonComponent,
+    ExportModalComponent
   ],
   imports: [
     BrowserModule,
