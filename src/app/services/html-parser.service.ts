@@ -1,5 +1,3 @@
-import { text } from '@angular/core/src/render3';
-
 function parseMdTitleToHtml(markdown: string): string {
   return markdown
     .replace(/^######(.+)(\n|$)/g, '<h6>$1</h6>') // Parse h6
