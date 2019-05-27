@@ -7,9 +7,9 @@ import { MarkdownInputComponent } from './components/text-editor/markdown-input/
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
 import { TextPreviewComponent } from './components/text-preview/text-preview.component';
 import { TextEditorButtonsComponent } from './components/text-editor/text-editor-buttons/text-editor-buttons.component';
-import { EditorButtonComponent } from './components/text-editor/text-editor-buttons/editor-button/editor-button.component';
-import { IconButtonComponent } from './components/icon-button/icon-button.component';
-import { FabButtonComponent } from './components/fab-button/fab-button.component';
+import { EditorButtonComponent } from './components/buttons/editor-button/editor-button.component';
+import { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';
+import { FabButtonComponent } from './components/buttons/fab-button/fab-button.component';
 import { ExportModalComponent } from './components/text-preview/export-modal/export-modal.component';
 
 @NgModule({
