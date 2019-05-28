@@ -1,0 +1,62 @@
+@import "../../../style/variables/variables";
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  background: white;
+  border-radius: 10px;
+  width: 80%;
+  padding: $big-padding;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  -webkit-animation: slideIn .6s;
+  -moz-animation: slideIn .6s;
+  -o-animation: slideIn .6s;
+  animation: slideIn .6s;
+}
+
+.modal-header {
+  margin-bottom: $big-padding;
+  color: $accent;
+  font-size: $mid-font;
+  font-weight: bold;
+}
+
+.modal-buttons {
+  margin-top: $big-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-button {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: $light-grey;
+  color: $dark-grey;
+  padding: $mid-padding $big-padding;
+  margin: $mid-padding;
+  font-size: 18px;
+
+  &.transparent {
+    background-color: transparent;
+    color: #52AEA0;
+  }
+
+  &:hover {
+    background-color: $accent;
+    color: white;
+  }
+}

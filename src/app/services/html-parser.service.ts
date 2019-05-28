@@ -1,11 +1,11 @@
 function parseMdTitleToHtml(markdown: string): string {
   return markdown
-    .replace(/^######(.+)(\n|$)/g, '<h6>$1</h6>') // Parse h6
-    .replace(/^#####(.+)(\n|$)/g, '<h5>$1</h5>') // Parse h5
-    .replace(/^####(.+)(\n|$)/g, '<h4>$1</h4>') // Parse h4
-    .replace(/^###(.+)(\n|$)/g, '<h3>$1</h3>') // Parse h3
-    .replace(/^##(.+)(\n|$)/g, '<h2>$1</h2>') // Parse h2
-    .replace(/^#(.+)(\n|$)/g, '<h1>$1</h1>'); // Parse h1
+    .replace(/######(.+)(\n|$)/g, '<h6>$1</h6>') // Parse h6
+    .replace(/#####(.+)(\n|$)/g, '<h5>$1</h5>') // Parse h5
+    .replace(/####(.+)(\n|$)/g, '<h4>$1</h4>') // Parse h4
+    .replace(/###(.+)(\n|$)/g, '<h3>$1</h3>') // Parse h3
+    .replace(/##(.+)(\n|$)/g, '<h2>$1</h2>') // Parse h2
+    .replace(/#(.+)(\n|$)/g, '<h1>$1</h1>'); // Parse h1
 }
 
 function parseMdBoldToHtml(markdown: string): string {

@@ -1,0 +1,48 @@
+<div class="text-editor-buttons">
+  <div class="center-buttons">
+    <app-editor-button
+      label="**gras**"
+      (action)="insertBold()"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="_italique_"
+      (action)="insertItalic()"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="[lien](url)"
+      (action)="insertLink()"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="# Titre 1"
+      (action)="insertTitle(1)"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="## Titre 2"
+      (action)="insertTitle(2)"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="### Titre 3"
+      (action)="insertTitle(3)"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="#### Titre 4"
+      (action)="insertTitle(4)"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="##### Titre 5"
+      (action)="insertTitle(5)"
+    ></app-editor-button>
+
+    <app-editor-button
+      label="###### Titre 6"
+      (action)="insertTitle(6)"
+    ></app-editor-button>
+  </div>
+</div>

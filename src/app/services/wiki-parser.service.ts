@@ -1,11 +1,11 @@
 function parseMdTitleToWiki(markdown: string): string {
   return markdown
-    .replace(/^######(.+)(\n|$)/g, '====== $1 ======') // Parse h6
-    .replace(/^#####(.+)(\n|$)/g, '===== $1 =====') // Parse h5
-    .replace(/^####(.+)(\n|$)/g, '==== $1 ====') // Parse h4
-    .replace(/^###(.+)(\n|$)/g, '=== $1 ===') // Parse h3
-    .replace(/^##(.+)(\n|$)/g, '== $1 ==') // Parse h2
-    .replace(/^#(.+)(\n|$)/g, '= $1 ='); // Parse h1
+    .replace(/######(.+)(\n|$)/g, '====== $1 ======') // Parse h6
+    .replace(/#####(.+)(\n|$)/g, '===== $1 =====') // Parse h5
+    .replace(/####(.+)(\n|$)/g, '==== $1 ====') // Parse h4
+    .replace(/###(.+)(\n|$)/g, '=== $1 ===') // Parse h3
+    .replace(/##(.+)(\n|$)/g, '== $1 ==') // Parse h2
+    .replace(/#(.+)(\n|$)/g, '= $1 ='); // Parse h1
 }
 
 function parseMdBoldToWiki(markdown: string): string {

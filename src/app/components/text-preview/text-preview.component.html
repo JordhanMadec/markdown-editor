@@ -1,0 +1,22 @@
+<section id="text-preview">
+  <div class="no-preview" *ngIf="parsedText.length === 0; else noText">
+    <h3><i class="fas fa-eye"></i> Prévisualisation</h3>
+    <span>Vous n'avez pas encore saisi de contenu.</span>
+  </div>
+
+  <ng-template #noText>
+    <div class="preview-header">
+      <i class="fas fa-eye"></i>
+      <span>Prévisualisation</span>
+    </div>
+
+    <div [innerHTML]="parsedText"></div>
+    <app-fab-button icon="fas fa-file-download" [onClick]="onShowModal"></app-fab-button>
+  </ng-template>
+
+  <app-export-modal
+    *ngIf="modalVisible"
+    (closeModal)="onHideModal()"
+    [text]="text"
+  ></app-export-modal>
+</section>

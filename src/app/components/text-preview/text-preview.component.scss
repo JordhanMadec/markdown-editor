@@ -1,0 +1,37 @@
+@import "../../style/variables/variables";
+
+#text-preview {
+  height: 100%;
+  padding: $mid-padding;
+  overflow-y: auto;
+}
+
+.no-preview {
+  font-size: $mid-font;
+  color: $mid-grey;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-animation: slideIn .6s;
+  animation: slideIn .6s;
+  text-align: center;
+
+  h3 {
+    color: $accent;
+  }
+}
+
+.preview-header {
+  color: $accent;
+  font-weight: bold;
+  font-size: $mid-font;
+  margin-bottom: $mid-padding;
+  -webkit-animation: slideIn .6s;
+  animation: slideIn .6s;
+
+  .svg-inline--fa {
+    margin-right: 10px;
+  }
+}

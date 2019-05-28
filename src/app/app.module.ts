@@ -8,7 +8,6 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
 import { TextPreviewComponent } from './components/text-preview/text-preview.component';
 import { TextEditorButtonsComponent } from './components/text-editor/text-editor-buttons/text-editor-buttons.component';
 import { EditorButtonComponent } from './components/buttons/editor-button/editor-button.component';
-import { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';
 import { FabButtonComponent } from './components/buttons/fab-button/fab-button.component';
 import { ExportModalComponent } from './components/text-preview/export-modal/export-modal.component';
 
@@ -20,9 +19,10 @@ import { ExportModalComponent } from './components/text-preview/export-modal/exp
     TextPreviewComponent,
     TextEditorButtonsComponent,
     EditorButtonComponent,
-    IconButtonComponent,
     FabButtonComponent,
-    ExportModalComponent
+    ExportModalComponent,
+    TextEditorComponent,
+    TextPreviewComponent
   ],
   imports: [
     BrowserModule,

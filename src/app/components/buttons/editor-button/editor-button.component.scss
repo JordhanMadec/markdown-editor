@@ -1,0 +1,19 @@
+@import "../../../style/variables/variables";
+
+.editor-button {
+  background-color: rgba($light-grey, 0.5);
+  color: $dark-grey;
+  border: none;
+  border-radius: 5px;
+  padding: $small-padding $big-padding;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  transition: .3s;
+  width: max-content;
+
+  &:hover {
+    background-color: $accent;
+    color: white;
+  }
+}
