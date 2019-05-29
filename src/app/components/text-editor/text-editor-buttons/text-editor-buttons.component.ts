@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import insertTextIntoTextarea from '../../../services/textarea.service';
 
 @Component({
   selector: 'app-text-editor-buttons',
@@ -15,22 +16,6 @@ export class TextEditorButtonsComponent implements OnInit {
   ngOnInit() {
   }
 
-  insertTextIntoTextarea(prefix: string, suffix: string): void {
-    const startPos = this.textarea.selectionStart || 0;
-    const endPos = this.textarea.selectionEnd || startPos;
-    const selection = this.textarea.value.substring(startPos, endPos);
-
-    this.textarea.value = this.textarea.value.substring(0, startPos)
-      + prefix
-      + selection
-      + suffix
-      + this.textarea.value.substring(endPos, this.textarea.value.length);
-
-    this.textarea.selectionStart = startPos + prefix.length;
-    this.textarea.selectionEnd = endPos + prefix.length;
-    this.textarea.focus();
-  }
-
   insertTitle(range: number): void {
     let prefix = '';
 
@@ -38,18 +23,18 @@ export class TextEditorButtonsComponent implements OnInit {
       prefix += '#';
     }
 
-    this.insertTextIntoTextarea(prefix, '');
+    insertTextIntoTextarea(this.textarea, prefix, '');
   }
 
   insertBold(): void {
-    this.insertTextIntoTextarea('**', '**');
+    insertTextIntoTextarea(this.textarea, '**', '**');
   }
 
   insertItalic(): void {
-    this.insertTextIntoTextarea('_', '_');
+    insertTextIntoTextarea(this.textarea, '_', '_');
   }
 
   insertLink(): void {
-    this.insertTextIntoTextarea('[', '](url)');
+    insertTextIntoTextarea(this.textarea, '[', '](url)');
   }
 }
